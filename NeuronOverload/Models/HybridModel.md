@@ -9,7 +9,7 @@ Step 2: Feed embeddings into a Graph Neural Network (GNN) → Model cell depende
 Step 3: Pass the graph output into a Transformer to predict delay/slack.
 
 
-
+```python
 class HybridFACTModel(nn.Module):
     def __init__(self, embed_dim=64, num_heads=4, num_layers=3, hidden_dim=128):
         super(HybridFACTModel, self).__init__()
@@ -25,3 +25,4 @@ class HybridFACTModel(nn.Module):
         # Pass through Transformer to predict timing
         output = self.transformer(combined_input.unsqueeze(1))
         return output
+```
